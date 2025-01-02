@@ -6,10 +6,8 @@ var client = new LightstreamerClient("https://push.lightstreamer.com/", "ISSLIVE
 client.connect();
 
 var sub = new Subscription("MERGE", ["NODE3000005"], ["TimeStamp","Value"]);
-var timesub = new Subscription("MERGE", "TIME_000001", ["TimeStamp", "Status.Class"]);
 
 client.subscribe(sub);
-client.subscribe(timesub);
 
 function hoursToDate(hours) {
     // Create base date of current year
